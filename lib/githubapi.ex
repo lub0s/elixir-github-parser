@@ -16,7 +16,7 @@ defmodule Github do
   end
 
   def run do
-    "lupajz "
+    read_input()
     |> build_url
     |> HTTPoison.get()
     |> handle_json
