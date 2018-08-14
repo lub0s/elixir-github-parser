@@ -6,11 +6,12 @@ defmodule Github do
     result = HTTPoison.get(ofUrl, [], ssl: [{:versions, [:"tlsv1.2"]}])
 
     case result do
-      {:ok, {body}} ->
-        IO.puts(body)
+      {:ok, response } ->
+        IO.puts(response.body)
 
-      {:error, {reason}} ->
-        IO.puts(reason)
+      {:error, { _term, _id, _reason }} ->
+        IO.puts("Error happened")
+
     end
   end
 
